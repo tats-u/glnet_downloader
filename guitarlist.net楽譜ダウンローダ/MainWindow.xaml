@@ -1,0 +1,28 @@
+﻿<Window x:Class="guitarlist.net楽譜ダウンローダ.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="guitarlist.net楽譜ダウンローダ" Height="350" Width="525" KeyDown="WindowKeyDown" Closing="WindowClosing">
+    <Grid>
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="0">
+                <Label Content="楽譜ページURL:" VerticalContentAlignment="Center"/>
+                <TextBox x:Name="URLTB" VerticalContentAlignment="Center" Height="24" Width="328"/>
+            </StackPanel>
+            <Label Content="入力の仕方: ブラウザでguitarlist.netの楽譜のページを開き、&#xD;&#xA;URLをコピーして上の欄に貼り付けてください" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="2">
+                <Label Content="保存先:" VerticalContentAlignment="Center"/>
+                <TextBox x:Name="Destination" VerticalContentAlignment="Center" Height="23" Width="272"/>
+                <Button x:Name="DestButton" Content="参照" Width="74" Height="23" Margin="10,0,0,0" Click="DestButton_Click"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="3">
+                <Button x:Name="DownloadButton" Content="ダウンロード" Width="74" Height="23" Click="DownloadButton_Click" />
+                <CheckBox x:Name="WhetherCreateDirectory" Content="サブフォルダを作成して保存する" IsChecked="True" Margin="10,0,0,0"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="4">
+                <Label x:Name="Progress" Content="" />
+                <ProgressBar x:Name="PrgrsBr" Height="14" Width="272"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
